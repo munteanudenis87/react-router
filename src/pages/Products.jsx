@@ -1,9 +1,11 @@
 import axios from "axios";
+import { Button } from "bootstrap";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Products() {
   const [productsList, setProductsList] = useState([]);
+  const [page, setPage] = useState(1);
 
   function productList () {
     axios.get("https://fakestoreapi.com/products")
@@ -13,11 +15,23 @@ function Products() {
     })
   }
   useEffect(productList, []);
+  function nextPage() {
+    setPage(() => setPage(page + 1));
+  }
+  function prevPage() {
+    if (page > 1) {
+      setPage(() => setPage(page - 1));
+    }
+  }
 
   return (
     <>
      <section className="container">
       <section className='row'>
+        <section>
+          {page > 1 ? (<button className="btn btn-primary" onClick={prevPage}>Previous Page</button>) : ('')}
+          <button className="btn btn-warning" onClick={nextPage}>Next Page</button>
+        </section>
         <section className="product col-6">
           <h1>Our Products</h1>
           {productsList.map(productsList => (
