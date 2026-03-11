@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [productsList, setProductsList] = useState([]);
@@ -31,6 +32,11 @@ function Products() {
                 <p className="product-title">
                   {productsList.title}
                 </p>
+              </div>
+              <div>
+                <Link to={`/products/${productsList.id}`}>
+                  View more...
+                </Link>
               </div>
               <div className="product-image">
                 <img src={productsList.image} className="product-img" alt={productsList.title} 
