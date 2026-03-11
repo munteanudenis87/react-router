@@ -1,13 +1,19 @@
-import Homepage from '../components/Homepage';
-import About from '../components/About';
-import Products from '../components/Products';
+import { Outlet } from 'react-router';
+import MainNav from '../components/MainNav';
+import Footer from '../components/Footer';
 
 export default function DefaultLayout() {
     return (
         <div>
-            <Homepage />
-            <Products />
-            <About />
+            <header>
+                < MainNav />
+            </header>
+            <main>
+                <Outlet />
+            </main>
+            <footer>
+                < Footer />
+            </footer>
         </div>
     );
 }

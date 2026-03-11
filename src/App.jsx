@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './layouts/DefaultLayout';
-import Homepage from './components/Homepage';
-import About from './components/About';
-import Products from './components/Products';
+import Homepage from './pages/Homepage';
+import About from './pages/About';
+import Products from './pages/Products';
 
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route>
+        <Route element={<DefaultLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="/prodotti" element={<Products />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />}  />
         </Route>
       </Routes>

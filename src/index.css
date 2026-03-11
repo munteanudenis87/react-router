@@ -66,3 +66,45 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+nav > a {
+  padding: 1rem;
+}
+nav > a.active{
+  color: rgb(255, 255, 255);
+  background-color: rgb(87, 107, 107);
+}
+.header-nav{
+  background-color: #213547;
+  height: 150px;
+}
+
+.footer-nav{
+  background-color: #213547;
+  color: #f9f9f9;
+  height: 100px;
+}
+.about-pg{
+  background-color: #44a7fd;
+  width: 600px;
+  height: 600px;
+}
+.product article{
+  display: flex;
+  background-color: burlywood;
+  border: solid #213547;
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.product-img{
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.product-title{
+  color: blue;
+
+}
+.product-price{
+  color: red;
+}
