@@ -1,15 +1,16 @@
 import axios from "axios"
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductDetailPage() {
     const { id } = useParams();
     const [product, setProduct] = useState();
+    const navigate = useNavigate();
 
     function singleProduct() {
         axios.get(`https://fakestoreapi.com/products/${id}`)
         .then(response => setProduct(response.data))
-        .catch(error => console.warn(error))
+        .catch(error => {navigate("/products")})
     }
 
     useEffect(() => {
